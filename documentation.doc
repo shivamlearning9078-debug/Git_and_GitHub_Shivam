@@ -1,0 +1,95 @@
+# Flask & MongoDB Atlas — DevOps Assignment
+
+**Student Name:** Shivam  
+**Project:** Flask Application with JSON API and MongoDB Atlas
+
+## 1. Objective
+
+The objective of this project is to develop a Flask application that provides a JSON API and a frontend form. The API reads data from a backend JSON file and returns it as a JSON response. The form accepts user information and stores it in MongoDB Atlas.
+
+After successful submission, the user is redirected to a page displaying “Data submitted successfully”. If an error occurs, the application displays an error on the same form page.
+
+## 2. Tools and Technologies
+
+- Python
+- Flask
+- MongoDB Atlas
+- PyMongo
+- python-dotenv
+- HTML and CSS
+- Visual Studio Code
+- Git and GitHub
+
+## 3. Project Structure
+
+The project contains `app.py`, `data/data.json`, HTML templates, CSS styling, `requirements.txt`, `README.md`, `.gitignore`, screenshots, and this documentation.
+
+**Screenshot 1:** Insert a screenshot of the project structure in VS Code.
+
+## 4. Application Setup
+
+The application was developed and tested using Visual Studio Code and a Python virtual environment.
+
+Commands used:
+
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python app.py
+```
+
+**Screenshot 2:** Insert a screenshot of the terminal showing the Flask server running.
+
+## 5. Task 1 — JSON API Route
+
+The `/api` route reads data from `data/data.json` and returns it in JSON format.
+
+Test URL: `http://127.0.0.1:5000/api`
+
+**Screenshot 3:** Insert a screenshot of the JSON response in your browser.
+
+## 6. Task 2 — Frontend Form and MongoDB Atlas
+
+The home page displays a form with name, email, and message fields. Flask validates the submitted data and uses PyMongo to insert it into the `submissions` collection in the `flask_assignment` database.
+
+**Screenshot 4:** Insert a screenshot of the frontend form.
+
+**Screenshot 5:** Insert a screenshot of the saved record in MongoDB Atlas.
+
+## 7. Success and Error Handling
+
+### Successful submission
+
+When the database insert succeeds, the application redirects the user to the success page displaying “Data submitted successfully”.
+
+**Screenshot 6:** Insert a screenshot of the success page.
+
+### Error handling
+
+If a required field is empty or the database operation fails, the application displays an error on the form page without redirecting to the success page.
+
+**Screenshot 7:** Insert a screenshot of the form displaying an error.
+
+## 8. Routes Summary
+
+- `/api` — Returns the JSON list.
+- `/` — Displays the frontend form.
+- `/submit` — Validates form data and saves it to MongoDB Atlas.
+- `/success` — Displays the success message after redirection.
+
+## 9. GitHub Repository
+
+**Repository URL:** Paste your GitHub repository link here.
+
+The repository contains the application source code, templates, CSS, JSON data, dependency list, README, screenshots, and documentation.
+
+## 10. Security
+
+The `.env` file contains private MongoDB connection details. It is excluded from GitHub and the submission ZIP. The virtual environment is also excluded because dependencies can be installed from `requirements.txt`.
+
+## 11. Conclusion
+
+This project demonstrates how to create a Flask JSON API, build a frontend form, save data to MongoDB Atlas, and implement success and error handling.
+
+Before submission, the documentation, screenshots, GitHub link, and final ZIP file must be checked for completeness.
