@@ -14,4 +14,9 @@
         "name": "DevOps",
         "description": "Practices for reliable software delivery"
     }
+    {
+        "id": 4,
+        "name": "DevOpsIT",
+        "description": "Practices for reliable software delivery in IT"
+    }
 ]
