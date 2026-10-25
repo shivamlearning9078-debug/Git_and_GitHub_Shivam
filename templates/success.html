@@ -3,25 +3,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submission Successful</title>
-
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <main class="container">
-        <div class="success-icon" aria-hidden="true">&#10004;</div>
-
-        <h1>Data submitted successfully</h1>
-
-        <p class="success-text">
-            Your information has been saved to MongoDB Atlas.
-        </p>
-
-        <a class="button-link" href="{{ url_for('home') }}">
-            Submit Another Response
-        </a>
-    </main>
+    <h1>To-Do Item Submitted</h1>
+    <p>Your item "{{ item_name }}" was saved successfully.</p>
+    <a href="/">Return to the To-Do page</a>
 </body>
 </html>
