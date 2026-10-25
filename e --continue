@@ -1,0 +1,28 @@
+* [33m0eab69a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Restore To-Do form state with Item ID field
+[31m|[m *   [33m0d098e1[m[33m ([m[1;31morigin/main[m[33m)[m Merge additional To-Do form fields
+[31m|[m [32m|[m[31m\[m  
+[31m|[m [32m|[m[31m/[m  
+[31m|[m[31m/[m[32m|[m   
+* [32m|[m [33m61d4b9c[m[33m ([m[1;31morigin/master_1[m[33m, [m[1;32mmaster_1[m[33m)[m Add Item ID field to To-Do form
+[32m|[m[32m/[m  
+*   [33m2113da3[m Merge To-Do backend API feature
+[34m|[m[35m\[m  
+[34m|[m * [33m2699e31[m[33m ([m[1;31morigin/master_2[m[33m, [m[1;32mmaster_2[m[33m)[m Add MongoDB To-Do submission API
+* [35m|[m   [33m8d0c367[m Merge To-Do frontend feature
+[35m|[m[1;31m\[m [35m\[m  
+[35m|[m [1;31m|[m[35m/[m  
+[35m|[m[35m/[m[1;31m|[m   
+[35m|[m * [33m39350a3[m Add To-Do form with item name and description
+[35m|[m[35m/[m  
+*   [33m83c6155[m Merge JSON API updates
+[1;32m|[m[1;33m\[m  
+[1;32m|[m * [33m3592ffa[m[33m ([m[1;31morigin/Shivam_new[m[33m, [m[1;32mShivam_new[m[33m)[m Update JSON data for API route
+* [1;33m|[m   [33m0d6aab1[m Merge Shivam branch into main
+[1;33m|[m[1;35m\[m [1;33m\[m  
+[1;33m|[m [1;35m|[m[1;33m/[m  
+[1;33m|[m[1;33m/[m[1;35m|[m   
+[1;33m|[m * [33me4eba9e[m[33m ([m[1;31morigin/Shivam[m[33m, [m[1;32mShivam[m[33m)[m Add Flask project files
+* [1;35m|[m [33m7618b10[m Update API JSON data
+[1;35m|[m[1;35m/[m  
+* [33mf54742b[m Add assignment documentation and screenshots
+* [33m2f82681[m Add Flask Project files

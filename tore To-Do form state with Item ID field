@@ -1,0 +1,101 @@
+[1mdiff --git a/Screenshots/Commit_JSON.png b/Screenshots/Commit_JSON.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..66a9cf4[m
+Binary files /dev/null and b/Screenshots/Commit_JSON.png differ
+[1mdiff --git a/Screenshots/Commit_frontend_changes.png b/Screenshots/Commit_frontend_changes.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6813fb7[m
+Binary files /dev/null and b/Screenshots/Commit_frontend_changes.png differ
+[1mdiff --git a/Screenshots/JSON_File_validation.png b/Screenshots/JSON_File_validation.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4672da3[m
+Binary files /dev/null and b/Screenshots/JSON_File_validation.png differ
+[1mdiff --git a/Screenshots/MongoDB_update.png b/Screenshots/MongoDB_update.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1ace9a5[m
+Binary files /dev/null and b/Screenshots/MongoDB_update.png differ
+[1mdiff --git a/Screenshots/Push_log3line.png b/Screenshots/Push_log3line.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3790e28[m
+Binary files /dev/null and b/Screenshots/Push_log3line.png differ
+[1mdiff --git a/Screenshots/Shivam_new Branch.png b/Screenshots/Shivam_new Branch.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ff407e8[m
+Binary files /dev/null and b/Screenshots/Shivam_new Branch.png differ
+[1mdiff --git a/Screenshots/Switch_to_main.png b/Screenshots/Switch_to_main.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f4e5c81[m
+Binary files /dev/null and b/Screenshots/Switch_to_main.png differ
+[1mdiff --git a/Screenshots/To_do_manager.png b/Screenshots/To_do_manager.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d11861f[m
+Binary files /dev/null and b/Screenshots/To_do_manager.png differ
+[1mdiff --git a/Screenshots/Verified_branches.png b/Screenshots/Verified_branches.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4358505[m
+Binary files /dev/null and b/Screenshots/Verified_branches.png differ
+[1mdiff --git a/Screenshots/comit_ItemID.png b/Screenshots/comit_ItemID.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4c2472f[m
+Binary files /dev/null and b/Screenshots/comit_ItemID.png differ
+[1mdiff --git a/Screenshots/creating_master_1.png b/Screenshots/creating_master_1.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e893d9d[m
+Binary files /dev/null and b/Screenshots/creating_master_1.png differ
+[1mdiff --git a/Screenshots/creating_master_2.png b/Screenshots/creating_master_2.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8c5cc37[m
+Binary files /dev/null and b/Screenshots/creating_master_2.png differ
+[1mdiff --git a/Screenshots/merge_into_main.png b/Screenshots/merge_into_main.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..31069fc[m
+Binary files /dev/null and b/Screenshots/merge_into_main.png differ
+[1mdiff --git a/Screenshots/merged_frontend_and_backend.png b/Screenshots/merged_frontend_and_backend.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ca0187d[m
+Binary files /dev/null and b/Screenshots/merged_frontend_and_backend.png differ
+[1mdiff --git a/Screenshots/pushed_merged.png b/Screenshots/pushed_merged.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e96c793[m
+Binary files /dev/null and b/Screenshots/pushed_merged.png differ
+[1mdiff --git a/Screenshots/q10_resolved and log.png b/Screenshots/q10_resolved and log.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8fbabbf[m
+Binary files /dev/null and b/Screenshots/q10_resolved and log.png differ
+[1mdiff --git a/Screenshots/submittodoitem.png b/Screenshots/submittodoitem.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..484adfe[m
+Binary files /dev/null and b/Screenshots/submittodoitem.png differ
+[1mdiff --git a/templates/success.html b/templates/success.html[m
+[1mindex 50001e0..3f57900 100644[m
+[1m--- a/templates/success.html[m
+[1m+++ b/templates/success.html[m
+[36m@@ -3,25 +3,11 @@[m
+ <html lang="en">[m
+ <head>[m
+     <meta charset="UTF-8">[m
+[31m-    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+     <title>Submission Successful</title>[m
+[31m-[m
+[31m-    <link rel="stylesheet"[m
+[31m-          href="{{ url_for('static', filename='style.css') }}">[m
+ </head>[m
+ <body>[m
+[31m-    <main class="container">[m
+[31m-        <div class="success-icon" aria-hidden="true">&#10004;</div>[m
+[31m-[m
+[31m-        <h1>Data submitted successfully</h1>[m
+[31m-[m
+[31m-        <p class="success-text">[m
+[31m-            Your information has been saved to MongoDB Atlas.[m
+[31m-        </p>[m
+[31m-[m
+[31m-        <a class="button-link" href="{{ url_for('home') }}">[m
+[31m-            Submit Another Response[m
+[31m-        </a>[m
+[31m-    </main>[m
+[32m+[m[32m    <h1>To-Do Item Submitted</h1>[m
+[32m+[m[32m    <p>Your item "{{ item_name }}" was saved successfully.</p>[m
+[32m+[m[32m    <a href="/">Return to the To-Do page</a>[m
+ </body>[m
+ </html>[m
