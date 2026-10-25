@@ -2,6 +2,7 @@
 import json
 import os
 from pathlib import Path
+from datetime import datetime, timezone
 
 from dotenv import load_dotenv
 from flask import (
@@ -21,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent
 # Load environment variables
 load_dotenv(BASE_DIR / ".env")
 
+# Initialize Flask application
 app = Flask(__name__)
 
 # MongoDB configuration
@@ -33,7 +35,6 @@ if MONGO_URI:
         MONGO_URI,
         serverSelectionTimeoutMS=5000
     )
-
 
 # Task 1: JSON API route
 @app.route("/api")
@@ -66,7 +67,7 @@ def success():
     return render_template("success.html")
 
 
-# Task 2: Save submitted form data to MongoDB Atlas
+# Task 2: Save regular form data to MongoDB Atlas
 @app.route("/submit", methods=["POST"])
 def submit():
     name = request.form.get("name", "").strip()
@@ -94,27 +95,26 @@ def submit():
         ), 500
 
     try:
-        # Verify the database connection
+        # Verify database connection
         client.admin.command("ping")
 
         # Select database and collection
         db = client["flask_assignment"]
         collection = db["submissions"]
 
-        # Insert the form data
+        # Insert regular form data
         collection.insert_one({
             "name": name,
             "email": email,
             "message": message
         })
 
-        # Redirect only after a successful insert
+        # Redirect after successful insertion
         return redirect(url_for("success"))
 
     except PyMongoError:
         app.logger.exception("MongoDB submission failed")
 
-        # Display the error on the same form page
         return render_template(
             "index.html",
             error=(
@@ -127,5 +127,71 @@ def submit():
         ), 500
 
 
+# Task 3: Submit a To-Do item to MongoDB Atlas
+@app.route("/submittodoitem", methods=["POST"])
+def submit_todo_item():
+    item_name = request.form.get("itemName", "").strip()
+    item_description = request.form.get(
+        "itemDescription", ""
+    ).strip()
+
+    # Also accept JSON clients
+    if request.is_json:
+        data = request.get_json(silent=True) or {}
+
+        item_name = str(data.get("itemName", "")).strip()
+        item_description = str(
+            data.get("itemDescription", "")
+        ).strip()
+
+    # Validate required fields
+    if not item_name or not item_description:
+        return jsonify({
+            "error": "itemName and itemDescription are required"
+        }), 400
+
+    # Check database configuration
+    if client is None:
+        return jsonify({
+            "error": "Database is not configured. Please check the .env file."
+        }), 500
+
+    # Create To-Do document
+    document = {
+        "itemName": item_name,
+        "itemDescription": item_description,
+        "createdAt": datetime.now(timezone.utc)
+    }
+
+    try:
+        # Verify database connection
+        client.admin.command("ping")
+
+        # Use the existing database and collection
+        mongo_db = client["flask_assignment"]
+        result = mongo_db["submissions"].insert_one(document)
+
+        # JSON clients receive a JSON response
+        if request.is_json:
+            return jsonify({
+                "message": "To-Do item saved successfully",
+                "id": str(result.inserted_id)
+            }), 201
+
+        # Browser form clients receive a success page
+        return render_template(
+            "success.html",
+            item_name=item_name
+        ), 201
+
+    except PyMongoError:
+        app.logger.exception("Failed to save To-Do item")
+
+        return jsonify({
+            "error": "Unable to save the To-Do item"
+        }), 500
+
+
+# Run the Flask application
 if __name__ == "__main__":
     app.run(debug=True)
