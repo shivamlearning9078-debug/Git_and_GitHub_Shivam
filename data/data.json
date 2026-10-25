@@ -1,22 +1,22 @@
-[
+{
+  "project": "Flask and MongoDB",
+  "assignment": "Git and GitHub DevOps",
+  "version": 2,
+  "items": [
     {
-        "id": 1,
-        "name": "Flask",
-        "description": "A lightweight Python web framework"
+      "id": 1,
+      "name": "Git Branching",
+      "description": "Create and merge feature branches"
     },
     {
-        "id": 2,
-        "name": "MongoDB",
-        "description": "A document-oriented NoSQL database"
+      "id": 2,
+      "name": "Conflict Resolution",
+      "description": "Resolve merge conflicts using Git"
     },
     {
-        "id": 3,
-        "name": "DevOps",
-        "description": "Practices for reliable software delivery"
+      "id": 3,
+      "name": "MongoDB Integration",
+      "description": "Store submitted form data"
     }
-    {
-        "id": 4,
-        "name": "DevOpsIT",
-        "description": "Practices for reliable software delivery in IT"
-    }
-]
+  ]
+}
